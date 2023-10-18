@@ -1,0 +1,401 @@
+/*Import Fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&family=Raleway:wght@400&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  background: #f8fafd;
+  height: 108vh;
+}
+header {
+  /*Starts from here*/
+  height: 260px;
+  width: 100%;
+  background: RGB(33, 41, 88);
+  margin-bottom: 0;
+}
+#rectangle_1 {
+  height: 31.5px;
+  width: 83px;
+  background: RGB(5, 128, 232);
+  margin-left: calc(100% - 83px);
+}
+#circle_1 {
+  z-index: 2;
+  height: 31.5px;
+  width: 31.5px;
+  background: RGB(93, 47, 193);
+  border-radius: 15.75px;
+  margin-left: calc(83px - 31.5px);
+}
+#rectangle_2 {
+  height: 31.5px;
+  width: 50px;
+  background: RGB(255, 128, 41);
+  margin-left: calc(100% - 50px);
+}
+#circle_2 {
+  z-index: 2;
+  height: 31.5px;
+  width: 31.5px;
+  background: RGB(92, 231, 253);
+  border-radius: 15.75px;
+  margin-left: calc(100% - 31.5px);
+}
+.image {
+  position: absolute;
+  top: 81.5px;
+  left: 17.5px;
+  height: 52.5px;
+  width: 50px;
+  background: linear-gradient(to bottom, #add8e6 0%, #191970 100%);
+  border-radius: 2px 2px 20px 20px;
+}
+.title {
+  height: 50px;
+  width: 110px;
+  margin-bottom: 3px;
+  position: absolute;
+  display: inline-block;
+  border-bottom: 1px solid RGB(230, 128, 41);
+  top: 81.5px;
+  left: 80px;
+}
+.motto {
+  color: white;
+  font-size: 15px;
+  margin: 5px 5px 5px 81px;
+  font-family: "Raleway", Arial;
+} /* Header Ends here */
+/*
+The Input and button aren't placed in the header rather they are placed absolutely...
+*/
+.loader {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.loader > p {
+  margin: auto 50px;
+  font-size: large;
+  font-family: "Raleway", Arial;
+  font-weight: 400;
+  color: #0580e8;
+}
+
+.input {
+  position: absolute;
+  top: 192.5px;
+  left: 5px;
+  height: 38.5px;
+  width: 92vw;
+  border-radius: 50px;
+  border: none;
+  background: rgb(255, 255, 255);
+  font-size: 15px;
+  font-family: "Oswald", sans-serif;
+  display: inline-block;
+  text-indent: 20px;
+}
+.input:focus {
+  box-shadow: 0 0 10px rgba(92, 231, 253);
+  outline: 2px solid RGB(92, 231, 253);
+}
+.focus:focus {
+  box-shadow: 0 0 10px rgba(92, 231, 253);
+  outline: 2px solid red !important;
+}
+#button {
+  position: absolute;
+  top: 192.5px;
+  left: 93.5vw;
+  height: 3em;
+  width: 3em;
+  border-radius: 1.5em;
+  background: RGB(251, 195, 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid black;
+}
+.Warn {
+  color: red;
+  font-size: 12px;
+  font-weight: bolder;
+  font-family: "Raleway", Arial;
+  margin: 70px 0 0 40px;
+}
+.contain {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.word {
+  width: fit-content;
+  height: fit-content;
+}
+.VolumeLogo {
+  height: 3em;
+  width: 3em;
+  border-radius: 1.5em;
+  background: RGB(225, 155, 50);
+  margin: 37px 0 0 15px;
+}
+#SPEAKOF {
+  height: 2em;
+  width: auto;
+  margin: auto auto;
+}
+h1 {
+  margin: 20px 0 0 35px;
+  font-size: 50px;
+  color: RGB(225, 155, 75);
+  font-family: "Playfair Display", serif;
+}
+.para {
+  margin: 0 0 0 35px;
+  font-size: 20px;
+  color: RGB(33, 41, 88);
+}
+
+#source {
+  height: fit-content;
+  width: fit-content;
+  display: none;
+  flex-direction: row;
+  margin: auto 50px auto auto;
+  border-radius: 10px;
+  text-decoration: none;
+  color: black;
+  background: RGB(251, 195, 3);
+  font-family: "Oswald", sans-serif;
+}
+#source > img {
+  margin: auto 5px;
+}
+#source > p {
+  margin: 5px 5px 5px 2px;
+}
+hr {
+  width: 90vw;
+  margin: 10px auto 0 auto;
+  display: none;
+}
+.content {
+  display: none;
+  flex-direction: row;
+}
+/* hover animations */
+#button:hover {
+  cursor: pointer;
+  transform: scale(1.06);
+}
+#button:hover :is(svg) {
+  color: white;
+  transform: scale(1.36);
+}
+#button:active {
+  color: black;
+  transform: scale(1);
+}
+.VolumeLogo:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px 6px black;
+}
+.VolumeLogo:active {
+  box-shadow: none;
+}
+#source:hover {
+  box-shadow: 3px 3px 6px black;
+}
+#source:active {
+  box-shadow: none;
+}
+.arrows:hover {
+  transform: scale(1.15);
+}
+.next:hover {
+  transform: rotate(180deg) scale(1.15);
+}
+/* Slider's CSS */
+#slider {
+  margin: 37px 0;
+  width: 48vw;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+.slides {
+  position: absolute;
+  top: 0;
+  left: 4vw;
+  height: 100%;
+  width: 40vw;
+}
+
+.slide {
+  position: relative;
+  border-radius: 0 50px 0 50px;
+  height: 100%;
+  background-color: RGB(33, 41, 88);
+  font-family: "Raleway", Arial;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.slide > p {
+  margin: 5px 15px;
+}
+.eg {
+  margin: 2px;
+  font-family: "Mochiy Pop One", sans-serif;
+  font-size: 15px;
+  text-shadow: 1px 1px #0580e8;
+  font-weight: 100;
+}
+.partOfSpeech {
+  text-shadow: 2px 2px #0580e8;
+  text-transform: capitalize;
+  font-family: "Mochiy Pop One", sans-serif;
+  font-size: 20px;
+}
+
+.arrows {
+  margin: 0 2px;
+  position: absolute;
+  background: none;
+  border: none;
+  top: 100px;
+  left: 0;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+}
+.arrows > img {
+  height: 100%;
+  width: 100%;
+}
+.prev {
+  left: 20px;
+}
+.next {
+  transform: rotate(180deg);
+  left: calc(50vw - 90px);
+}
+
+.Synonyms {
+  height: 250px;
+  width: 20vw;
+  margin: 37px 12px;
+  background: RGB(225, 155, 50);
+  border-radius: 0 50px 0 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.Antonyms {
+  height: 250px;
+  width: 20vw;
+  margin: 37px 12px;
+  background: RGB(225, 155, 50);
+  border-radius: 0 50px 0 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.ANTONYMSPARA,
+.SYNONYMSPARA {
+  margin: 0 5px;
+  display: block;
+  color: black;
+  font-family: "Oswald", sans-serif;
+}
+
+.Synonyms > h3 {
+  margin: 5px 10px;
+  display: inline-block;
+  font-family: "Mochiy Pop One", sans-serif;
+  color: white;
+  text-shadow: 2px 2px RGB(33, 41, 88);
+}
+.Antonyms > h3 {
+  margin: 5px 10px;
+  display: inline-block;
+  font-family: "Mochiy Pop One", sans-serif;
+  color: white;
+  text-shadow: 2px 2px RGB(33, 41, 88);
+}
+
+.reverse {
+  animation: reverse1 0.5s linear forwards;
+}
+@keyframes reverse1 {
+  from {
+    opacity: 0;
+    transform: scale(70%);
+  }
+  to {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}
+
+/* ____________RESPONSIVENESS__________ */
+@media screen and (max-width: 450px) {
+  .input {
+    width: 86vw;
+  }
+  #button {
+    left: calc(100vw - (3em + 3px));
+  }
+  .contain {
+    overflow: scroll;
+  }
+  h1 {
+    height: 70px;
+    width: 195px;
+    overflow: scroll;
+    margin: 10px 0 0 15px;
+  }
+  .VolumeLogo {
+    margin: auto;
+  }
+  #source {
+    margin-right: 5px;
+  }
+  .content {
+    flex-direction: column;
+  }
+
+  #slider {
+    margin: 37px auto;
+    width: 100vw;
+  }
+  .slides {
+    width: 80vw;
+    left: 10vw;
+  }
+  .slide {
+    overflow: scroll;
+  }
+  .next {
+    left: calc(100vw - 40px);
+  }
+  .prev {
+    margin: 0;
+    left: 0;
+  }
+  .Synonyms,
+  .Antonyms {
+    width: 80vw;
+    margin: 37px auto;
+    overflow: scroll;
+  }
+  .loader {
+    flex-direction: column;
+    align-items: center;
+  }
+}
