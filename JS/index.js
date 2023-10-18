@@ -13,26 +13,35 @@ async function getData(word) {
     loader.innerHTML = "";
     if (response.ok === true) {
       console.log(data);
-      if (data[0].phonetic !== "" && data[0].phonetic !== undefined) {
-        // Check if the phonetic text is stored in the `phonetic` property
-        WORD.innerHTML = `<h1>${word}</h1>\n<p class = "para">${data[0].phonetic}</p>`; //Displaying The word
-      } else if (data[0].phonetics === "" && data[0].phonetics === undefined) {
+      try {
+        if (data[0].phonetic !== "" && data[0].phonetic !== undefined) {
+          // Check if the phonetic text is stored in the `phonetic` property
+          WORD.innerHTML = `<h1>${word}</h1>\n<p class = "para">${data[0].phonetic}</p>`; //Displaying The word
+          //New Code
+        } else if (
+          data[0].phonetics === "" ||
+          data[0].phonetics === undefined
+        ) {
+          WORD.innerHTML = `<h1>${word}</h1>`;
+        } else if (
+          (data[0].phonetics[0].text !== "" &&
+            data[0].phonetics[0].text !== undefined) ||
+          (data[0].phonetics.hasOwnProperty(1) &&
+            data[0].phonetics[1].text !== undefined &&
+            data[0].phonetics[1].text !== "")
+        ) {
+          // Check if the phonetic text is stored in the `phonetics[0].text` property or the `phonetics[1].text` property
+          WORD.innerHTML = `<h1>${word}</h1>\n<p class = "para">${
+            data[0].phonetics[0].text || data[0].phonetics[1].text
+          }</p>`;
+        } else {
+          // The phonetic text is not stored in any of the known locations
+          WORD.innerHTML = `<h1>${word}</h1>`;
+        }
+      } catch (error) {
+        console.log("Phonetics Error: ", error);
         WORD.innerHTML = `<h1>${word}</h1>`;
-      } else if (
-        (data[0].phonetics[0].text !== "" &&
-          data[0].phonetics[0].text !== undefined) ||
-        (data[0].phonetics.hasOwnProperty(1) &&
-          data[0].phonetics[1].text !== undefined &&
-          data[0].phonetics[1].text !== "")
-      ) {
-        // Check if the phonetic text is stored in the `phonetics[0].text` property or the `phonetics[1].text` property
-        WORD.innerHTML = `<h1>${word}</h1>\n<p class = "para">${
-          data[0].phonetics[0].text || data[0].phonetics[1].text
-        }</p>`;
-      } else {
-        // The phonetic text is not stored in any of the known locations
-        WORD.innerHTML = `<h1>${word}</h1>`;
-      }
+      } //New Code
       let dis = 99;
       scrollNext = 0;
 
@@ -142,6 +151,11 @@ async function getData(word) {
         break;
       default:
         console.error("Fetch Error", error);
+        //New Code
+        input.focus();
+        input.classList.add("focus");
+        WARN.innerHTML = "Something Went Wrong";
+        loader.innerHTML = `<dotlottie-player src="https://lottie.host/0f6da3f8-8373-4160-97e5-7766acbce832/EEYYXebJ07.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>\n<p>Something Went Wrong.</p>`;
     }
   }
 }
