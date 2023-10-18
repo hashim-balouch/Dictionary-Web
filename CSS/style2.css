@@ -11,7 +11,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("/Images\,logos\,videos\,Gifs/cloud.jpg");
+  background-image: url("Images\,logos\,videos\,Gifs/cloud.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
