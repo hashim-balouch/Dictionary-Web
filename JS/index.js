@@ -147,7 +147,7 @@ async function getData(word) {
 }
 function ConfirmUserInputThenFetch() {
   if (word !== "") {
-    loader.innerHTML = `<img src="/Images,logos,videos,Gifs/Bean Eater-1s-200px.gif" alt="loader" height = " 50 px" width = "auto">`;
+    loader.innerHTML = `<img src="Images,logos,videos,Gifs/Bean Eater-1s-200px.gif" alt="loader" height = " 50 px" width = "auto">`;
     getData(word);
 
     input.placeholder = "Search English";
